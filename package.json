@@ -33,7 +33,7 @@
     "lint": "standard bin/buildnumgen *.js lib/*.js tests/*.js",
     "check": "tap tests/*.js",
     "test": "npm run lint && npm run check",
-    "coveralls": "COVERALLS_REPO_TOKEN=WWZwbWYSXerOnJUWlmnZyhBWvhdfiGVt8 npm run check -- --cov --coverage-report=lcov --no-browser",
+    "coveralls": "COVERALLS_REPO_TOKEN=gdW8xKIlPOKwdpTM79HShT78OTbpbSNBd npm run check -- --cov --coverage-report=lcov --no-browser",
     "coverage": "test `node --version | cut -c 2` -eq 8 && npm run coveralls"
   },
   "dependencies": {
