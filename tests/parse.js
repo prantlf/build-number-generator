@@ -10,7 +10,7 @@ function checkParsedBuild (date) {
   test.equal(date.getMonth(), expectedDate.getMonth())
   test.equal(date.getDate(), expectedDate.getDate())
   test.equal(date.getHours(), expectedDate.getHours())
-  test.equal(date.getMinutes(), expectedDate.getMinutes())
+  test.ok(Math.abs(date.getMinutes() - expectedDate.getMinutes()) <= 1)
 }
 
 test.test('exports the `parse` method', test => {
