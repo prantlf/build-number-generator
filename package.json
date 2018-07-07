@@ -1,0 +1,55 @@
+{
+  "name": "build-number-generator",
+  "description": "Generates a unique build number with the build time readable \"by a human\".",
+  "version": "0.0.1",
+  "homepage": "https://github.com/prantlf/build-number-generator",
+  "author": {
+    "name": "Ferdinand Prantl",
+    "email": "prantlf@gmail.com",
+    "url": "http://prantl.tk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prantlf/build-number-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prantlf/build-number-generator/issues"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/build-number-generator/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "./index.js",
+  "bin": {
+    "buildnumgen": "./bin/buildnumgen"
+  },
+  "scripts": {
+    "lint": "standard bin/buildnumgen *.js lib/*.js tests/*.js",
+    "check": "tap tests/*.js",
+    "test": "npm run lint && npm run check",
+    "coveralls": "COVERALLS_REPO_TOKEN=WWZwbWYSXerOnJUWlmnZyhBWvhdfiGVt8 npm run check -- --cov --coverage-report=lcov --no-browser",
+    "coverage": "test `node --version | cut -c 2` -eq 8 && npm run coveralls"
+  },
+  "dependencies": {
+    "commander": "^2.16.0",
+    "sprintf-js": "^1.1.1"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "standard": "^11.0.1",
+    "tap": "^12.0.1"
+  },
+  "keywords": [
+    "buildnumber",
+    "build",
+    "number",
+    "version",
+    "generator"
+  ]
+}
