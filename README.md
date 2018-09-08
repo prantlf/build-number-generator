@@ -23,7 +23,7 @@ The generated build number has the following features:
 This module offers the following functionality:
 
 * Command-line tool to generate, validate and parse the build numbers. (Can be integrated to any build script.)
-* Functional module for programmatic usage with the same functionality. (Can be integrated to JavaScript build scripts like [Grunt[ or [Gulp].)
+* Functional module for programmatic usage with the same functionality. (Can be integrated to JavaScript build scripts like [Grunt] or [Gulp].)
 
 Example
 -------
@@ -72,9 +72,9 @@ Running `buildnumgen --help` prints usage instructions:
       Prints a new build number if called without arguments. If called with a
       previously generated build number, it will print the time, when it was
       generated. If called with a semver number, it will append the build number
-      to it and print the result. The default build number separator is dot (".").
-      When validating a build number, the process exists with zero if the input is
-      valid, otherwise it exists with a non-zero.
+      to it and print the result. The default build number separator is dot (.).
+      When validating a build number, the process exists with zero if the input
+      is valid, otherwise it exists with a non-zero.
 
 ## Programmatic usage
 
@@ -120,7 +120,7 @@ const buildTime = format('1.0.3.180625392')
 
 ## Contributing
 
-In lieu of a formal styleguide, take care to maintain the existing coding style.  Add unit tests for any new or changed functionality. Lint and test your code using Grunt.
+In lieu of a formal styleguide, take care to maintain the existing coding style.  Add unit tests for any new or changed functionality. Lint and test your code using `npm test`.
 
 ## Release History
 
