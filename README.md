@@ -15,7 +15,7 @@ Features
 
 The generated build number has the following features:
 
-* The date and time of the build can be read "by a human" from looking at the build number. (Uses BCD notation for a year-month-day time stamp: YYMMDDCCC.)
+* The date and time of the build can be read "by a human" from looking at the build number. (Uses BCD notation for a year-month-day time stamp: YYMMDDCCC. "CCC" ist the count of 2-minute intervals after midnight.) 
 * A new unique number can be generated every two minutes. (Enough for usual CI/CD builds running on a central build server after every push to the source code repository.)
 * The build number has fixed number of digits. (Contains always nine digits for easier column formatting of version numbers.)
 * The build number is an integer. (Can be parsed to a 32-bit integer, if it needs to be processed as a number elsewhere.)
