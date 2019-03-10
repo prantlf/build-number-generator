@@ -31,7 +31,7 @@ Example
     Full version:     1.0.3.180625392
 
     Product version:  1.0.3
-    Build number:     180625392
+    Build number:     180625392 (read: 18-06-25, 392*2 minutes after midnight)
     Built at:         25 June 2018 1:04 PM
 
 *Product version* marks the particular version of your product for identification and compatibility-checking purposes. The format of the version number is not fixed. [Node.js] modules usually comply with the [semver] standard.
@@ -40,7 +40,7 @@ Example
 
 ## Command-line usage
 
-Make sure that you have [Node] >= 6 installed. Install the `build-number-generator` package globally to be able to generate and parse build numbers from any directory using `PATH`:
+Make sure that you have [Node] >= 6 installed. Install the `build-number-generator` package globally to be able to generate and parse build numbers by running `buildnumgen` from any directory in `PATH`:
 
     $ npm i -g build-number-generator
 
@@ -128,7 +128,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 
-Copyright (c) 2018 Ferdinand Prantl
+Copyright (c) 2018-2019 Ferdinand Prantl
 
 Licensed under the MIT license.
 
