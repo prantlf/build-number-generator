@@ -6,6 +6,15 @@
       "request": "launch",
       "name": "bin/buildnumgen",
       "program": "${workspaceRoot}/bin/buildnumgen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "tests",
+      "program": "${workspaceFolder}/node_modules/.bin/tap",
+      "args": [
+        "tests/*.js"
+      ]
     }
   ]
 }
