@@ -3,7 +3,7 @@ notifications:
   email: false
 node_js:
   - node
-  - lts/8
+  - lts/*
   - 8
 after_success:
   - npm run coverage
