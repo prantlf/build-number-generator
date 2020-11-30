@@ -25,7 +25,7 @@
   "engines": {
     "node": ">=8"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "bin": {
     "buildnumgen": "bin/buildnumgen"
   },
@@ -36,8 +36,7 @@
     "coverage": "test `node --version | cut -c 2` -eq 8 && cat coverage/lcov.info | coveralls"
   },
   "dependencies": {
-    "commander": "6.2.0",
-    "sprintf-js": "1.1.2"
+    "commander": "6.2.0"
   },
   "devDependencies": {
     "coveralls": "3.1.0",
@@ -46,6 +45,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.1.0",
+    "sprintf-js": "1.1.2",
     "standard": "16.0.3",
     "tap": "14.11.0"
   },

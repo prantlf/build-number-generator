@@ -1,7 +1,4 @@
-'use strict'
-
-const parseBuildTime = require('..').parse
-const formatBuildTime = require('..').format
+const { parse: parseBuildTime, format: formatBuildTime } = require('..')
 const test = require('tap')
 
 test.test('exports the `format` method', test => {

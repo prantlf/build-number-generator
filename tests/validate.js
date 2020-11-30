@@ -1,6 +1,4 @@
-'use strict'
-
-const validateBuildNumber = require('..').validate
+const { validate: validateBuildNumber } = require('..')
 const test = require('tap')
 
 const { build: validBuild } = require('./shared/build')

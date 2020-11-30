@@ -1,36 +1,34 @@
 #!/usr/bin/env node
 
-'use strict'
-
 const commander = require('commander')
 const { generate, validate, format } = require('..')
-const pkg = require('../package.json')
+const { version, description } = require('../package.json')
 
-commander.version(pkg.version)
-  .description(pkg.description)
+commander.version(version)
+  .description(description)
   .usage('[options] [build_number|product_version]')
   .option('-s, --separator <separator>', 'separates product version from build number')
   .option('-v, --validate', 'only validates a build number')
 
 commander.on('--help', () => {
-  console.log()
-  console.log('  Prints a new build number if called without arguments. If called with a')
-  console.log('  previously generated build number, it will print the time, when it was')
-  console.log('  generated. If called with a semver number, it will append the build number')
-  console.log('  to it and print the result. The default build number separator is dot (.).')
-  console.log('  When validating a build number, the process exists with zero if the input')
-  console.log('  is valid, otherwise it exists with a non-zero.')
-  console.log()
-  console.log('  Examples:')
-  console.log()
-  console.log('    $ buildnumgen')
-  console.log('    180625392')
-  console.log('    $ buildnumgen 1.0.3')
-  console.log('    1.0.3.180625392')
-  console.log('    $ buildnumgen 180625392')
-  console.log('    Mon Jun 25 2018 13:04')
-  console.log('    $ buildnumgen 1.0.3.180625392')
-  console.log('    Mon Jun 25 2018 13:04')
+  console.log(`
+  Prints a new build number if called without arguments. If called with a
+  previously generated build number, it will print the time, when it was
+  generated. If called with a semver number, it will append the build number
+  to it and print the result. The default build number separator is dot (.).
+  When validating a build number, the process exists with zero if the input
+  is valid, otherwise it exists with a non-zero.
+
+  Examples:
+
+    $ buildnumgen
+    180625392
+    $ buildnumgen 1.0.3
+    1.0.3.180625392
+    $ buildnumgen 180625392
+    Mon Jun 25 2018 13:04
+    $ buildnumgen 1.0.3.180625392
+    Mon Jun 25 2018 13:04`)
 })
 
 commander.parse(process.argv)

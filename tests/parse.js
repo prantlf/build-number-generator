@@ -1,6 +1,4 @@
-'use strict'
-
-const parseBuildTime = require('..').parse
+const { parse: parseBuildTime } = require('..')
 const test = require('tap')
 
 const { date: expectedDate, build } = require('./shared/build')

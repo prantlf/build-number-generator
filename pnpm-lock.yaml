@@ -1,6 +1,5 @@
 dependencies:
   commander: 6.2.0
-  sprintf-js: 1.1.2
 devDependencies:
   coveralls: 3.1.0
   eslint-config-standard: 16.0.2_a9466f6230ed9f0b34e13c096bf4e836
@@ -8,6 +7,7 @@ devDependencies:
   eslint-plugin-node: 11.1.0
   eslint-plugin-promise: 4.2.1
   eslint-plugin-standard: 4.1.0
+  sprintf-js: 1.1.2
   standard: 16.0.3
   tap: 14.11.0
 lockfileVersion: 5.2
@@ -2478,7 +2478,7 @@ packages:
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
   /sprintf-js/1.1.2:
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==
   /sshpk/1.16.1:
@@ -3049,6 +3049,6 @@ specifiers:
   eslint-plugin-node: 11.1.0
   eslint-plugin-promise: 4.2.1
   eslint-plugin-standard: 4.1.0
-  sprintf-js: ^1.1.2
+  sprintf-js: 1.1.2
   standard: 16.0.3
   tap: 14.11.0
