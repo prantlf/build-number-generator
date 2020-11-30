@@ -23,31 +23,31 @@
     }
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
-  "main": "./index.js",
+  "main": "index.js",
   "bin": {
-    "buildnumgen": "./bin/buildnumgen"
+    "buildnumgen": "bin/buildnumgen"
   },
   "scripts": {
-    "lint": "standard --verbose bin/buildnumgen *.js lib/*.js tests/*.js",
+    "lint": "standard --verbose bin/buildnumgen lib tests",
     "check": "tap tests/*.js",
     "test": "npm run lint && npm run check -- --cov --coverage-report=lcov --no-browser",
     "coverage": "test `node --version | cut -c 2` -eq 8 && cat coverage/lcov.info | coveralls"
   },
   "dependencies": {
-    "commander": "^3.0.1",
-    "sprintf-js": "^1.1.2"
+    "commander": "6.2.0",
+    "sprintf-js": "1.1.2"
   },
   "devDependencies": {
-    "coveralls": "^3.0.6",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "standard": "^14.3.1",
-    "tap": "^14.6.4"
+    "coveralls": "3.1.0",
+    "eslint-config-standard": "16.0.2",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.1.0",
+    "standard": "16.0.3",
+    "tap": "14.11.0"
   },
   "keywords": [
     "buildnumber",
