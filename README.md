@@ -6,12 +6,11 @@
 [![devDependency Status](https://david-dm.org/prantlf/build-number-generator/dev-status.svg)](https://david-dm.org/prantlf/build-number-generator#info=devDependencies)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![NPM Downloads](https://nodei.co/npm/build-number-generator.png?downloads=true&stars=true)](https://www.npmjs.com/package/build-number-generator)
-
 Generates a build number to be appended to your product version number, which is unique for each build and which can be read "by a human" to learn about the build time. No need for maintaining the most recent build number in your sources, incrementing it during the build and committing & pushing the new one to your sources.
 
-Features
---------
+Try generating your build number or parsing an existing one an print the build time [online]!
+
+## Features
 
 The generated build number has the following features:
 
@@ -23,15 +22,14 @@ The generated build number has the following features:
 This module offers the following functionality:
 
 * Command-line tool to generate, validate and parse the build numbers. (Can be integrated to any build script.)
-* Functional module for programmatic usage with the same functionality. (Can be integrated to JavaScript build scripts like [Grunt] or [Gulp].)
+* [ESM], [CJS] and [UMD] modules offering an [API] for programmatic usage in [Node.js] and the browser. Can be integrated to JavaScript build scripts like [Grunt] or [Gulp].
 
-Example
--------
+### Example
 
     Full version:     1.0.3.180625392
 
     Product version:  1.0.3
-    Build number:     180625392 (read: 18-06-25, 392*2 minutes after midnight)
+    Build number:     180625392 (2018-06-25, 392*2 minutes after midnight)
     Built at:         25 June 2018 1:04 PM
 
 *Product version* marks the particular version of your product for identification and compatibility-checking purposes. The format of the version number is not fixed. [Node.js] modules usually comply with the [semver] standard.
@@ -40,9 +38,11 @@ Example
 
 ## Command-line usage
 
-Make sure that you have [Node] >= 6 installed. Install the `build-number-generator` package globally to be able to generate and parse build numbers by running `buildnumgen` from any directory in `PATH`:
+Make sure that you have [Node.js] >= 8 installed. Install the `build-number-generator` package globally using your favourite package manager to be able to generate and parse build numbers by running `buildnumgen` from any directory in `PATH`:
 
     $ npm i -g build-number-generator
+    $ pnpm i -g build-number-generator
+    $ yarn global add build-number-generator
 
     $ buildnumgen
     180625392
@@ -76,18 +76,12 @@ Running `buildnumgen --help` prints usage instructions:
       When validating a build number, the process exists with zero if the input
       is valid, otherwise it exists with a non-zero.
 
-## Programmatic usage
+## API
 
-Make sure that you use [Node] >= 6. Install the `build-number-generator` package locally as a development dependency to be able to generate and parse build numbers from JavaScript:
+The `package.json` exposes module bundles for [Node.js] ([CJS], [UMD] and [ESM]) and the browser ([UMD] and [ESM]). They exports four functions to generate build numbers, validate them, parse them to `Date` instances and format them to shortened readable Date strings.
 
-```bash
-npm i -D build-number-generator
-```
-
-The main module exports four functions to generate build numbers, validate them, parse them to Date instances and format them to shortened readable Date strings.
-
-```javascript
-const { generate, validate, parse, format } = require('build-number-generator')
+```js
+import { generate, validate, parse, format } from 'build-number-generator'
 
 // Returns '180625392'
 const buildNumber = generate()
@@ -118,21 +112,99 @@ const buildTime = format('180625392')
 const buildTime = format('1.0.3.180625392')
 ```
 
+## Node.js usage
+
+Make sure that you use [Node.js] >= 8. Install the `build-number-generator` package locally as a development dependency using your favourite package manager:
+
+```
+npm i -D build-number-generator
+pnpm i -D build-number-generator
+yarn add -D build-number-generator
+```
+
+Either import methods from the [API] using the [CJS] module:
+
+```js
+const { generate, validate, parse, format } = require('build-number-generator')
+...
+```
+
+Or import methods from the [API] using the [ESM] module:
+
+```js
+import { generate, validate, parse, format } from 'build-number-generator'
+...
+```
+
+## Browser usage
+
+You can either pack this module to your application bundle, or load it directly to the browser. For the former, you would install this package and import methods from the [API] in the same way as for the [Node.js usage]. For the latter, you would either refer to the module installed locally, or to the module from the [UNPKG CDN], for example:
+
+    ./node_modules/build-number-generator/dist/index.umd.min.js
+    https://unpkg.com/build-number-generator@1.0.0/dist/index.min.mjs
+
+The following modules are available in the `dist` directory:
+
+| Name               | Type                                          |
+| ------------------ | --------------------------------------------- |
+| `index.js`         | [CJS] module, not minified, for bundling only |
+| `index.mjs`        | [ESM] module, not minified                    |
+| `index.min.mjs`    | [ESM] module, minified                        |
+| `index.umd.js`     | [UMD] module, not minified                    |
+| `index.umd.min.js` | [UMD] module, minified                        |
+
+Either import methods from the [API] using the [ESM] module:
+
+```html
+<script type=module>
+  import { generate, validate, parse, format } from
+    'https://unpkg.com/build-number-generator@1.0.0/dist/index.min.mjs'
+  ...
+</script>
+```
+
+Or import methods from the [API] using the [UMD] module, which will set a global object `buildnumgen`:
+
+```html
+<script src=https://unpkg.com/build-number-generator@1.0.0/dist/index.umd.min.js></script>
+<script>
+  (() => {
+    const { generate, validate, parse, format } = buildnumgen
+    ...
+  })()
+</script>
+```
+
+If an [AMD] module loader is detected, the [UMD] module will return exports es expected:
+
+```html
+<script>
+  require(['https://unpkg.com/build-number-generator@1.0.0/dist/index.umd.min.js'],
+    ({ generate, validate, parse, format }) => {
+      ...
+    })
+</script>
+```
+
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.  Add unit tests for any new or changed functionality. Lint and test your code using `npm test`.
 
-## Release History
-
-* 2018-07-07   v0.0.1   Initial release
-
 ## License
 
-Copyright (c) 2018-2019 Ferdinand Prantl
+Copyright (c) 2018-2020 Ferdinand Prantl
 
 Licensed under the MIT license.
 
+[online]: https://prantlf.github.io/build-number-generator
 [semver]: https://semver.org/
-[Node]: https://nodejs.org/
+[Node.js]: https://nodejs.org/
 [Grunt]: https://gruntjs.com/
 [Gulp]: https://gulpjs.com/
+[API]: #api
+[Node.js usage]: #nodejs-usage
+[UNPKG CDN]: https://unpkg.com/
+[CJS]: https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/#commonjstotherescue
+[UMD]: https://github.com/umdjs/umd#readme
+[AMD]: https://github.com/amdjs/amdjs-api/wiki/AMD
+[ESM]: https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/#content-head
