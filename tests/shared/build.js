@@ -1,4 +1,4 @@
-const { sprintf } = require('sprintf-js')
+import { sprintf } from 'sprintf-js'
 
 const date = new Date()
 const build = sprintf('%02d%02d%02d%03d', date.getFullYear() % 100,

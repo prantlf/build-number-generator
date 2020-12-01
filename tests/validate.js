@@ -1,5 +1,5 @@
-const { validate: validateBuildNumber } = require('..')
-const test = require('tap')
+import { validate as validateBuildNumber } from '..'
+import test from 'tap'
 
 const { build: validBuild } = require('./shared/build')
 

@@ -1,8 +1,10 @@
 // Place your settings in this file to overwrite default and user settings.
 {
   "files.exclude": {
+    ".git": true,
     ".nyc_output": true,
     "coverage": true,
+    "dist": true,
     "node_modules": true,
     "npm-debug.log": true
   }

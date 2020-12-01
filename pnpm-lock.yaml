@@ -1,6 +1,7 @@
 dependencies:
   commander: 6.2.0
 devDependencies:
+  '@prantlf/esbuild': 0.8.17
   coveralls: 3.1.0
   eslint-config-standard: 16.0.2_a9466f6230ed9f0b34e13c096bf4e836
   eslint-plugin-import: 2.22.1
@@ -112,6 +113,12 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-XRUeBZ5zBWLYgSANMpThFddrZZkEbGHgUdt5UJjZfnlN9BGCiUBrf+nvbRupSjMvqzwnQN0qwCmOxITt1cfywA==
+  /@prantlf/esbuild/0.8.17:
+    dev: true
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-pe3cqQ1OZkqJyg2zujM9SB0cOwUfIQkDIJxQXgOAtqicFZSuGmpEhWAC8REVh96DQ+nN6h3lTxnGzVIG8Ev5/A==
   /@types/json5/0.0.29:
     dev: true
     resolution:
@@ -3042,6 +3049,7 @@ packages:
     resolution:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 specifiers:
+  '@prantlf/esbuild': 0.8.17
   commander: 6.2.0
   coveralls: 3.1.0
   eslint-config-standard: 16.0.2

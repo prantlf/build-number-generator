@@ -1,5 +1,5 @@
-const { generate: generateBuildNumber } = require('..')
-const test = require('tap')
+import { generate as generateBuildNumber } from '..'
+import test from 'tap'
 
 const { build: expectedBuild } = require('./shared/build')
 

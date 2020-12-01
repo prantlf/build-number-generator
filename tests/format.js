@@ -1,5 +1,5 @@
-const { parse: parseBuildTime, format: formatBuildTime } = require('..')
-const test = require('tap')
+import { parse as parseBuildTime, format as formatBuildTime } from '..'
+import test from 'tap'
 
 test.test('exports the `format` method', test => {
   test.equal(typeof formatBuildTime, 'function')

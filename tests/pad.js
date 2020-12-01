@@ -1,5 +1,5 @@
-const { pad2, pad3 } = require('../lib/pad')
-const test = require('tap')
+import { pad2, pad3 } from '../lib/pad'
+import test from 'tap'
 
 test.test('pad2 pads one digit', test => {
   test.equal(pad2(1), '01')

@@ -1,5 +1,5 @@
-const { parse: parseBuildTime } = require('..')
-const test = require('tap')
+import { parse as parseBuildTime } from '..'
+import test from 'tap'
 
 const { date: expectedDate, build } = require('./shared/build')
 
