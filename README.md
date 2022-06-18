@@ -9,7 +9,7 @@ Generates a build number to be appended to your product version number, which is
 
 Try generating your build number or parsing an existing one an print the build time [online]!
 
-**Note**: If you use Node.js < 10, stay with the versions 1.x. If you use Node.js < 14.8, stay with the versions 2.x. The functionality of the command-line script and of the API is the same.
+**Note**: If you use Node.js < 14.8, stay with the versions 1.x. The functionality of the command-line script and of the API is the same.
 
 ## Features
 

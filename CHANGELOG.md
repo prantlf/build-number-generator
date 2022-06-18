@@ -18,12 +18,6 @@ same.
   functionality, because noch much features were needed. Although no
   changes on the outside shoudl happen, on enever knows...
 
-## 2.0.0
-
-* Upgrade module dependencies
-
-**BREAKING CHANGE:** The command-line tool `buildnumgen` will not work with Node.js versions older then 10.
-
 ## 1.0.0
 
 * Add an online page for generating and parsing build numbers
