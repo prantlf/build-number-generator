@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/prantlf/build-number-generator/compare/v2.0.1...v2.0.2) (2022-06-18)
+
+
+### Bug Fixes
+
+* Clean bundled sources up ([75d5a0b](https://github.com/prantlf/build-number-generator/commit/75d5a0bf29509bddea70f6bddf344ea9d960e27c))
+
 ## [2.0.1](https://github.com/prantlf/build-number-generator/compare/v2.0.0...v2.0.1) (2022-06-18)
 
 
