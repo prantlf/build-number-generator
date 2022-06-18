@@ -1,14 +1,15 @@
 # build-number-generator
-[![NPM version](https://badge.fury.io/js/build-number-generator.png)](http://badge.fury.io/js/build-number-generator)
-[![Build Status](https://travis-ci.org/prantlf/build-number-generator.png)](https://travis-ci.org/prantlf/build-number-generator)
-[![Coverage Status](https://coveralls.io/repos/github/prantlf/build-number-generator/badge.svg?branch=master)](https://coveralls.io/github/prantlf/build-number-generator?branch=master)
-[![Dependency Status](https://david-dm.org/prantlf/build-number-generator.svg)](https://david-dm.org/prantlf/build-number-generator)
-[![devDependency Status](https://david-dm.org/prantlf/build-number-generator/dev-status.svg)](https://david-dm.org/prantlf/build-number-generator#info=devDependencies)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+[![Latest version](https://img.shields.io/npm/v/build-number-generator)
+ ![Dependency status](https://img.shields.io/librariesio/release/npm/build-number-generator)
+](https://www.npmjs.com/package/build-number-generator)
+[![Coverage](https://codecov.io/gh/prantlf/build-number-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/prantlf/build-number-generator)
 
 Generates a build number to be appended to your product version number, which is unique for each build and which can be read "by a human" to learn about the build time. No need for maintaining the most recent build number in your sources, incrementing it during the build and committing & pushing the new one to your sources.
 
 Try generating your build number or parsing an existing one an print the build time [online]!
+
+**Note**: If you use Node.js < 10, stay with the versions 1.x. If you use Node.js < 14.8, stay with the versions 2.x. The functionality of the command-line script and of the API is the same.
 
 ## Features
 
@@ -22,7 +23,10 @@ The generated build number has the following features:
 This module offers the following functionality:
 
 * Command-line tool to generate, validate and parse the build numbers. (Can be integrated to any build script.)
-* [ESM], [CJS] and [UMD] modules offering an [API] for programmatic usage in [Node.js] and the browser. Can be integrated to JavaScript build scripts like [Grunt] or [Gulp].
+* [ESM], [CJS] and [UMD] modules offering an [API] for programmatic usage in [Node.js], Deno and a web browser. Can be integrated to JavaScript build scripts like [Grunt] or [Gulp].
+* Includes TypeScript types.
+* No dependencies.
+* Tiny size - 1.12 kB minified, 602 B gzipped, 530 B brotlied.
 
 ### Example
 

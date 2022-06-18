@@ -1,27 +1,25 @@
-import { pad2, pad3 } from '../lib/pad'
-import test from 'tap'
+import { pad2, pad3 } from '../lib/pad.js'
+import { strictEqual } from 'assert'
+import tehanu from 'tehanu'
 
-test.test('pad2 pads one digit', test => {
-  test.equal(pad2(1), '01')
-  test.end()
+const test = tehanu(import.meta.url)
+
+test('pad2 pads one digit', () => {
+  strictEqual(pad2(1), '01')
 })
 
-test.test('pad2 does not pads two digits', test => {
-  test.equal(pad2(12), '12')
-  test.end()
+test('pad2 does not pads two digits', () => {
+  strictEqual(pad2(12), '12')
 })
 
-test.test('pad3 pads one digit', test => {
-  test.equal(pad3(1), '001')
-  test.end()
+test('pad3 pads one digit', () => {
+  strictEqual(pad3(1), '001')
 })
 
-test.test('pad3 pads two digits', test => {
-  test.equal(pad3(12), '012')
-  test.end()
+test('pad3 pads two digits', () => {
+  strictEqual(pad3(12), '012')
 })
 
-test.test('pad3 does not pads three digits', test => {
-  test.equal(pad3(123), '123')
-  test.end()
+test('pad3 does not pads three digits', () => {
+  strictEqual(pad3(123), '123')
 })

@@ -84,7 +84,7 @@
   </main>
 
 	<footer>
-		<small>Copyright &copy; 2020 Ferdinand Prantl. Version 1.0.0. See the
+		<small>Copyright &copy; 2018-2022 Ferdinand Prantl. Version 3.0.0. See the
 			<a href=https://github.com/prantlf/build-number-generator#readme>project pages</a>
 			for more information.</small>
 		<!-- See http://tholman.com/github-corners/ -->
@@ -92,16 +92,16 @@
   </footer>
 
   <script defer type=module>
-    // https://unpkg.com/build-number-generator@1.0.0/dist/index.min.mjs
+    // https://unpkg.com/build-number-generator@3.0.0/dist/index.min.mjs
     // ../dist/index.min.mjs
-    import { generate, validate, format } from 'https://unpkg.com/build-number-generator@1.0.0/dist/index.min.mjs'
+    import { generate, validate, format } from 'https://unpkg.com/build-number-generator@3.0.0/dist/index.min.mjs'
     const input = document.getElementById('input')
     const output = document.getElementById('output')
 
     function submit (event) {
       event.preventDefault()
-      const val = input.value
-      output.value = validate(val) ? format(val) : generate(val)
+      const { value } = input
+      output.value = validate(value) ? format(value) : generate(value)
     }
 
     document

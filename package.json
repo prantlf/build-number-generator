@@ -1,7 +1,7 @@
 {
   "name": "build-number-generator",
   "description": "Generates a unique build number with a human-readable build time.",
-  "version": "0.0.0-development",
+  "version": "2.0.0",
   "homepage": "https://github.com/prantlf/build-number-generator#readme",
   "author": {
     "name": "Ferdinand Prantl",
@@ -23,39 +23,69 @@
     }
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=14.8"
   },
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "browser": "dist/index.umd.js",
+  "browser": "dist/index.umd.min.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
   "bin": {
-    "buildnumgen": "bin/buildnumgen"
+    "buildnumgen": "bin/buildnumgen.cjs"
   },
   "files": [
     "bin",
     "dist"
   ],
   "scripts": {
-    "prepare": "node util/build",
-    "lint": "standard --verbose bin/buildnumgen lib tests",
-    "check": "tap tests/*.js",
-    "cover": "npm run check -- --cov --coverage-report=lcov --no-browser",
-    "test": "npm run lint && npm run check"
+    "prepare": "rollup -c",
+    "lint": "denolint",
+    "check": "teru-esm tests/*.js",
+    "cover": "c8 teru-esm tests/*.js",
+    "test": "denolint && c8 teru-esm tests/*.js"
   },
-  "dependencies": {
-    "commander": "6.2.0"
+  "c8": {
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "branches": 100,
+    "lines": 100,
+    "functions": 100,
+    "statements": 100
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "failComment": false
+        }
+      ],
+      "@semantic-release/git"
+    ]
   },
   "devDependencies": {
-    "@prantlf/esbuild": "0.8.17",
-    "coveralls": "3.1.0",
-    "eslint-config-standard": "16.0.2",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.1.0",
-    "sprintf-js": "1.1.2",
-    "standard": "16.0.3",
-    "tap": "14.11.0"
+    "@node-rs/deno-lint": "^1.13.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "c8": "^7.11.3",
+    "rollup": "^2.75.6",
+    "rollup-plugin-esbuild-minify": "^1.0.4",
+    "rollup-plugin-swc-minify": "^1.0.2",
+    "sprintf-js": "^1.1.2",
+    "tehanu": "^1.0.1",
+    "tehanu-repo-coco": "^1.0.0",
+    "tehanu-teru": "^1.0.0"
   },
   "keywords": [
     "buildnumber",

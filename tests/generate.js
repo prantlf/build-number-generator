@@ -1,33 +1,30 @@
-import { generate as generateBuildNumber } from '..'
-import test from 'tap'
+import { generate as generateBuildNumber } from '../dist/index.mjs'
+import { build as expectedBuild } from './shared/build.js'
+import { strictEqual } from 'assert'
+import tehanu from 'tehanu'
 
-const { build: expectedBuild } = require('./shared/build')
+const test = tehanu(import.meta.url)
 
-test.test('exports the `generate` method', test => {
-  test.equal(typeof generateBuildNumber, 'function')
-  test.end()
+test('exports the `generate` method', () => {
+  strictEqual(typeof generateBuildNumber, 'function')
 })
 
-test.test('generates a new build number by default', test => {
+test('generates a new build number by default', () => {
   const build = generateBuildNumber()
-  test.equal(build, expectedBuild)
-  test.end()
+  strictEqual(build, expectedBuild)
 })
 
-test.test('appends the new build number after the product version', test => {
+test('appends the new build number after the product version', () => {
   const build = generateBuildNumber('1.0.3')
-  test.equal(build, '1.0.3.' + expectedBuild)
-  test.end()
+  strictEqual(build, '1.0.3.' + expectedBuild)
 })
 
-test.test('appends the new build number with an object parameter', test => {
+test('appends the new build number with an object parameter', () => {
   const build = generateBuildNumber({ version: '1.0.3' })
-  test.equal(build, `1.0.3.${expectedBuild}`)
-  test.end()
+  strictEqual(build, `1.0.3.${expectedBuild}`)
 })
 
-test.test('can use a custom product version separator', test => {
+test('can use a custom product version separator', () => {
   const build = generateBuildNumber({ version: '2018/06', versionSeparator: '-' })
-  test.equal(build, `2018/06-${expectedBuild}`)
-  test.end()
+  strictEqual(build, `2018/06-${expectedBuild}`)
 })

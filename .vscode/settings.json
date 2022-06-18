@@ -2,10 +2,9 @@
 {
   "files.exclude": {
     ".git": true,
-    ".nyc_output": true,
     "coverage": true,
     "dist": true,
     "node_modules": true,
-    "npm-debug.log": true
+    "pnpm-lock.yaml": true
   }
 }

@@ -1,6 +1,4 @@
 .DS_Store
-.nyc_output
 coverage
 dist
 node_modules
-nom-debug.log

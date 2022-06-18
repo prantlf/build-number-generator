@@ -1,39 +1,35 @@
-import { validate as validateBuildNumber } from '..'
-import test from 'tap'
+import { validate as validateBuildNumber } from '../dist/index.mjs'
+import { build as validBuild } from './shared/build.js'
+import { strictEqual } from 'assert'
+import tehanu from 'tehanu'
 
-const { build: validBuild } = require('./shared/build')
+const test = tehanu(import.meta.url)
 
-test.test('exports the `validate` method', test => {
-  test.equal(typeof validateBuildNumber, 'function')
-  test.end()
+test('exports the `validate` method', () => {
+  strictEqual(typeof validateBuildNumber, 'function')
 })
 
-test.test('succeeds validating a valid build number', test => {
+test('succeeds validating a valid build number', () => {
   const valid = validateBuildNumber(validBuild)
-  test.equal(valid, true)
-  test.end()
+  strictEqual(valid, true)
 })
 
-test.test('succeeds validating a product version with build number', test => {
+test('succeeds validating a product version with build number', () => {
   const valid = validateBuildNumber('1.0.3.' + validBuild)
-  test.equal(valid, true)
-  test.end()
+  strictEqual(valid, true)
 })
 
-test.test('fails validating an invalid build number', test => {
+test('fails validating an invalid build number', () => {
   const valid = validateBuildNumber('abc')
-  test.equal(valid, false)
-  test.end()
+  strictEqual(valid, false)
 })
 
-test.test('fails validating a build number with an invalid date', test => {
+test('fails validating a build number with an invalid date', () => {
   const valid = validateBuildNumber('180035392')
-  test.equal(valid, false)
-  test.end()
+  strictEqual(valid, false)
 })
 
-test.test('fails with a null input too', test => {
+test('fails with a null input too', () => {
   const valid = validateBuildNumber()
-  test.equal(valid, false)
-  test.end()
+  strictEqual(valid, false)
 })

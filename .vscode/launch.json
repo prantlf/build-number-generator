@@ -5,13 +5,13 @@
       "name": "buildnumgen",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}/bin/buildnumgen"
+      "program": "${workspaceRoot}/bin/buildnumgen.js"
     },
     {
       "name": "tests",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/node_modules/tap/bin/run",
+      "program": "${workspaceFolder}/node_modules/tehanu-teru/lib/index.mjs",
       "args": [
         "tests/*.js"
       ]

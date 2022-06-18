@@ -1,26 +1,25 @@
-import { parse as parseBuildTime, format as formatBuildTime } from '..'
-import test from 'tap'
+import { parse as parseBuildTime, format as formatBuildTime } from '../dist/index.mjs'
+import { strictEqual } from 'assert'
+import tehanu from 'tehanu'
 
-test.test('exports the `format` method', test => {
-  test.equal(typeof formatBuildTime, 'function')
-  test.end()
+const test = tehanu(import.meta.url)
+
+test('exports the `format` method', () => {
+  strictEqual(typeof formatBuildTime, 'function')
 })
 
-test.test('formats a build number passed as a string', test => {
+test('formats a build number passed as a string', () => {
   const output = formatBuildTime('180625392')
-  test.equal(output, 'Mon Jun 25 2018 13:04')
-  test.end()
+  strictEqual(output, 'Mon Jun 25 2018 13:04')
 })
 
-test.test('formats a build number parsed to a Date instance', test => {
+test('formats a build number parsed to a Date instance', () => {
   const date = parseBuildTime('180625392')
   const output = formatBuildTime(date)
-  test.equal(output, 'Mon Jun 25 2018 13:04')
-  test.end()
+  strictEqual(output, 'Mon Jun 25 2018 13:04')
 })
 
-test.test('formats a build number including a product version', test => {
+test('formats a build number including a product version', () => {
   const output = formatBuildTime('1.0.3.180625392')
-  test.equal(output, 'Mon Jun 25 2018 13:04')
-  test.end()
+  strictEqual(output, 'Mon Jun 25 2018 13:04')
 })
