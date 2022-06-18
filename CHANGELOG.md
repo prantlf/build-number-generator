@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/prantlf/build-number-generator/compare/v2.0.0...v2.0.1) (2022-06-18)
+
+
+### Bug Fixes
+
+* Correct the package version number ([dce3d3e](https://github.com/prantlf/build-number-generator/commit/dce3d3e894f11b72817ecd248afcb162d8d7c2db))
+
 # [2.0.0](https://github.com/prantlf/build-number-generator/compare/v1.0.0...v2.0.0) (2022-06-18)
 
 
