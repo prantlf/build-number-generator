@@ -1,3 +1,4 @@
+import cleanup from 'rollup-plugin-cleanup'
 import { minify } from 'rollup-plugin-swc-minify'
 
 export default {
@@ -32,5 +33,6 @@ export default {
       sourcemap: true,
       plugins: [minify()]
     }
-  ]
+  ],
+  plugins: [cleanup()]
 }
