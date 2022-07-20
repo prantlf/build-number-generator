@@ -25,13 +25,13 @@
   "engines": {
     "node": ">=14.8"
   },
-  "type": "module",
+  "type": "commonjs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "browser": "dist/index.umd.min.js",
   "types": "lib/index.d.ts",
   "exports": {
-    "require": "./dist/index.cjs",
+    "require": "./dist/index.js",
     "import": "./dist/index.mjs"
   },
   "bin": {
@@ -39,7 +39,8 @@
   },
   "files": [
     "bin",
-    "dist"
+    "dist",
+    "lib/index.d.ts"
   ],
   "scripts": {
     "prepare": "rollup -c",
