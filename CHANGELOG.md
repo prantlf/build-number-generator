@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/prantlf/build-number-generator/compare/v2.0.2...v2.0.3) (2022-07-22)
+
+
+### Bug Fixes
+
+* Correct paths to the CJS export and to the bin script ([93dff1f](https://github.com/prantlf/build-number-generator/commit/93dff1f4b000b5926db870ccdf302e27d3381554))
+
 ## [2.0.2](https://github.com/prantlf/build-number-generator/compare/v2.0.1...v2.0.2) (2022-06-18)
 
 
