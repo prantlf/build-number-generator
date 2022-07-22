@@ -5,8 +5,8 @@ specifiers:
   '@semantic-release/changelog': ^6.0.1
   '@semantic-release/git': ^10.0.1
   build-number-generator: 'link:'
-  c8: ^7.11.3
-  rollup: ^2.75.6
+  c8: ^7.12.0
+  rollup: ^2.77.0
   rollup-plugin-cleanup: ^3.2.1
   rollup-plugin-swc-minify: ^1.0.3
   sprintf-js: ^1.1.2
@@ -19,10 +19,10 @@ devDependencies:
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
   build-number-generator: 'link:'
-  c8: 7.11.3
-  rollup: 2.75.6
-  rollup-plugin-cleanup: 3.2.1_rollup@2.75.6
-  rollup-plugin-swc-minify: 1.0.3_rollup@2.75.6
+  c8: 7.12.0
+  rollup: 2.77.0
+  rollup-plugin-cleanup: 3.2.1_rollup@2.77.0
+  rollup-plugin-swc-minify: 1.0.3_rollup@2.77.0
   sprintf-js: 1.1.2
   tehanu: 1.0.1
   tehanu-repo-coco: 1.0.0
@@ -414,8 +414,8 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /c8/7.11.3:
-    resolution: {integrity: sha512-6YBmsaNmqRm9OS3ZbIiL2EZgi1+Xc4O24jL3vMYGE6idixYuGdy76rIfIdltSKDj9DpLNrcXSonUTR1miBD0wA==}
+  /c8/7.12.0:
+    resolution: {integrity: sha512-CtgQrHOkyxr5koX1wEUmN/5cfDa2ckbHRA4Gy5LAL0zaCFtVWJS5++n+w4/sr2GWGerBxgTjpKeDclk/Qk6W/A==}
     engines: {node: '>=10.12.0'}
     hasBin: true
     dependencies:
@@ -464,7 +464,7 @@ packages:
     dev: true
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
   /convert-source-map/1.8.0:
@@ -827,25 +827,25 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-cleanup/3.2.1_rollup@2.75.6:
+  /rollup-plugin-cleanup/3.2.1_rollup@2.77.0:
     resolution: {integrity: sha512-zuv8EhoO3TpnrU8MX8W7YxSbO4gmOR0ny06Lm3nkFfq0IVKdBUtHwhVzY1OAJyNCIAdLiyPnOrU0KnO0Fri1GQ==}
     engines: {node: ^10.14.2 || >=12.0.0}
     peerDependencies:
       rollup: '>=2.0'
     dependencies:
       js-cleanup: 1.2.0
-      rollup: 2.75.6
+      rollup: 2.77.0
       rollup-pluginutils: 2.8.2
     dev: true
 
-  /rollup-plugin-swc-minify/1.0.3_rollup@2.75.6:
+  /rollup-plugin-swc-minify/1.0.3_rollup@2.77.0:
     resolution: {integrity: sha512-CK1FnR83gqqAiRlrGIqSLIKZMlSiXU3YxFRUj4ZAY9lJiVzS/npaBLSTAOmDEDkgVKtTDV0UuUsjXp6gLFzC7g==}
     engines: {node: '>= 14'}
     peerDependencies:
       rollup: ^2
     dependencies:
       '@swc/core': 1.2.204
-      rollup: 2.75.6
+      rollup: 2.77.0
     dev: true
 
   /rollup-pluginutils/2.8.2:
@@ -854,8 +854,8 @@ packages:
       estree-walker: 0.6.1
     dev: true
 
-  /rollup/2.75.6:
-    resolution: {integrity: sha512-OEf0TgpC9vU6WGROJIk1JA3LR5vk/yvqlzxqdrE2CzzXnqKXNzbAwlWUXis8RS3ZPe7LAq+YUxsRa0l3r27MLA==}
+  /rollup/2.77.0:
+    resolution: {integrity: sha512-vL8xjY4yOQEw79DvyXLijhnhh+R/O9zpF/LEgkCebZFtb6ELeN9H3/2T0r8+mp+fFTBHZ5qGpOpW2ela2zRt3g==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
