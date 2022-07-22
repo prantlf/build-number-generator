@@ -1,3 +1,11 @@
+## [2.0.4](https://github.com/prantlf/build-number-generator/compare/v2.0.3...v2.0.4) (2022-07-22)
+
+
+### Bug Fixes
+
+* Correct TypeScript types ([8bfb996](https://github.com/prantlf/build-number-generator/commit/8bfb996e65220c96488f7a07980b7b05f8a7590a))
+* Include TypeScript types file in the published package files ([4c0fdb9](https://github.com/prantlf/build-number-generator/commit/4c0fdb9719bcb60fec884888827f1305213b0291))
+
 ## [2.0.3](https://github.com/prantlf/build-number-generator/compare/v2.0.2...v2.0.3) (2022-07-22)
 
 
