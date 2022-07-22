@@ -31,7 +31,7 @@
   "browser": "dist/index.umd.min.js",
   "types": "lib/index.d.ts",
   "exports": {
-    "require": "./dist/index.js",
+    "require": "./dist/index.cjs",
     "import": "./dist/index.mjs"
   },
   "bin": {
@@ -44,10 +44,10 @@
   ],
   "scripts": {
     "prepare": "rollup -c",
-    "lint": "denolint",
-    "check": "npx buildnumgen && teru-cjs tests/*.cjs && teru-esm tests/*.js",
+    "lint": "denolint && tsc --noEmit tests/types.ts",
+    "check": "teru-cjs tests/*.cjs && teru-esm tests/*.js",
     "cover": "c8 teru-esm tests/*.js",
-    "test": "denolint && npx buildnumgen && teru-cjs tests/*.cjs && c8 teru-esm tests/*.js"
+    "test": "denolint && tsc --noEmit tests/types.ts && npx buildnumgen && teru-cjs tests/*.cjs && c8 teru-esm tests/*.js"
   },
   "c8": {
     "check-coverage": true,
@@ -87,7 +87,8 @@
     "sprintf-js": "^1.1.2",
     "tehanu": "^1.0.1",
     "tehanu-repo-coco": "^1.0.0",
-    "tehanu-teru": "^1.0.0"
+    "tehanu-teru": "^1.0.0",
+    "typescript": "^4.7.4"
   },
   "keywords": [
     "buildnumber",

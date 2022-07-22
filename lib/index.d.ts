@@ -9,4 +9,4 @@ export function validate(build: string): boolean
 
 export function parse(build: string): Date
 
-export function format(date: string | Date): Date
+export function format(date: string | Date): string
