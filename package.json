@@ -26,7 +26,7 @@
     "node": ">=14.8"
   },
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "browser": "dist/index.umd.min.js",
   "types": "lib/index.d.ts",
@@ -35,7 +35,7 @@
     "import": "./dist/index.mjs"
   },
   "bin": {
-    "buildnumgen": "bin/buildnumgen.cjs"
+    "buildnumgen": "bin/buildnumgen.js"
   },
   "files": [
     "bin",
@@ -44,9 +44,9 @@
   "scripts": {
     "prepare": "rollup -c",
     "lint": "denolint",
-    "check": "teru-esm tests/*.js",
+    "check": "npx buildnumgen && teru-cjs tests/*.cjs && teru-esm tests/*.js",
     "cover": "c8 teru-esm tests/*.js",
-    "test": "denolint && c8 teru-esm tests/*.js"
+    "test": "denolint && npx buildnumgen && teru-cjs tests/*.cjs && c8 teru-esm tests/*.js"
   },
   "c8": {
     "check-coverage": true,
@@ -78,6 +78,7 @@
     "@node-rs/deno-lint": "^1.13.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "build-number-generator": "link:",
     "c8": "^7.11.3",
     "rollup": "^2.75.6",
     "rollup-plugin-cleanup": "^3.2.1",

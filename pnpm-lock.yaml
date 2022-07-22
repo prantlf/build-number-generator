@@ -4,6 +4,7 @@ specifiers:
   '@node-rs/deno-lint': ^1.13.1
   '@semantic-release/changelog': ^6.0.1
   '@semantic-release/git': ^10.0.1
+  build-number-generator: 'link:'
   c8: ^7.11.3
   rollup: ^2.75.6
   rollup-plugin-cleanup: ^3.2.1
@@ -17,6 +18,7 @@ devDependencies:
   '@node-rs/deno-lint': 1.13.1
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
+  build-number-generator: 'link:'
   c8: 7.11.3
   rollup: 2.75.6
   rollup-plugin-cleanup: 3.2.1_rollup@2.75.6
