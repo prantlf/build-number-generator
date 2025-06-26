@@ -62,26 +62,8 @@
     "functions": 100,
     "statements": 100
   },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      [
-        "@semantic-release/github",
-        {
-          "failComment": false
-        }
-      ],
-      "@semantic-release/git"
-    ]
-  },
   "devDependencies": {
     "@biomejs/biome": "^2.0.5",
-    "@node-rs/deno-lint": "^1.20.4",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
     "build-number-generator": "link:",
     "c8": "^10.1.3",
     "rollup": "^4.44.1",
