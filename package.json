@@ -1,7 +1,7 @@
 {
   "name": "build-number-generator",
   "description": "Generates a unique build number with a human-readable build time.",
-  "version": "2.0.4",
+  "version": "3.0.0",
   "homepage": "https://github.com/prantlf/build-number-generator#readme",
   "author": {
     "name": "Ferdinand Prantl",

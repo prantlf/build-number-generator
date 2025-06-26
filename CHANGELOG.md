@@ -1,5 +1,21 @@
 # Changes
 
+## [3.0.0](https://github.com/prantlf/build-number-generator/compare/v2.0.4...v3.0.0) (2025-06-26)
+
+### Features
+
+* Upgrade dependencies ([dd4c99c](https://github.com/prantlf/build-number-generator/commit/dd4c99cbe693de751c02e7779810e195dbc405ef))
+
+### Bug Fixes
+
+* Add TypeScript types to package.json exports ([4ef8621](https://github.com/prantlf/build-number-generator/commit/4ef86218f6aa1ae2b71028bb705fd5859a8b03c7))
+
+### BREAKING CHANGES
+
+The oldest supported versoin of Node.js is 18 now.
+If you cannot upgrade your Node.js, stau with the versions 2.x
+of this package.
+
 ## [2.0.4](https://github.com/prantlf/build-number-generator/compare/v2.0.3...v2.0.4) (2022-07-22)
 
 ### Bug Fixes
