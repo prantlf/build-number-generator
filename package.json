@@ -32,7 +32,8 @@
   "types": "lib/index.d.ts",
   "exports": {
     "require": "./dist/index.cjs",
-    "import": "./dist/index.mjs"
+    "import": "./dist/index.mjs",
+    "types": "./lib/index.d.ts"
   },
   "bin": {
     "buildnumgen": "bin/buildnumgen.js"
