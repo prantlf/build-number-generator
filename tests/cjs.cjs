@@ -1,5 +1,5 @@
 const { generate, validate, parse, format } = require('build-number-generator')
-const { strictEqual } = require('assert')
+const { strictEqual } = require('node:assert')
 const test = require('tehanu')(__filename)
 
 test('exports all methods', () => {

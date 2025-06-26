@@ -1,5 +1,5 @@
 import { parse as parseBuildTime, format as formatBuildTime } from '../dist/index.mjs'
-import { strictEqual } from 'assert'
+import { strictEqual } from 'node:assert'
 import tehanu from 'tehanu'
 
 const test = tehanu(import.meta.url)

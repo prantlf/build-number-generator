@@ -1,6 +1,6 @@
 import { validate as validateBuildNumber } from '../dist/index.mjs'
 import { build as validBuild } from './shared/build.js'
-import { strictEqual } from 'assert'
+import { strictEqual } from 'node:assert'
 import tehanu from 'tehanu'
 
 const test = tehanu(import.meta.url)
@@ -15,7 +15,7 @@ test('succeeds validating a valid build number', () => {
 })
 
 test('succeeds validating a product version with build number', () => {
-  const valid = validateBuildNumber('1.0.3.' + validBuild)
+  const valid = validateBuildNumber(`1.0.3.${validBuild}`)
   strictEqual(valid, true)
 })
 

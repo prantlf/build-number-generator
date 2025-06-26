@@ -1,5 +1,6 @@
-## [2.0.4](https://github.com/prantlf/build-number-generator/compare/v2.0.3...v2.0.4) (2022-07-22)
+# Changes
 
+## [2.0.4](https://github.com/prantlf/build-number-generator/compare/v2.0.3...v2.0.4) (2022-07-22)
 
 ### Bug Fixes
 
@@ -8,13 +9,11 @@
 
 ## [2.0.3](https://github.com/prantlf/build-number-generator/compare/v2.0.2...v2.0.3) (2022-07-22)
 
-
 ### Bug Fixes
 
 * Correct paths to the CJS export and to the bin script ([93dff1f](https://github.com/prantlf/build-number-generator/commit/93dff1f4b000b5926db870ccdf302e27d3381554))
 
 ## [2.0.2](https://github.com/prantlf/build-number-generator/compare/v2.0.1...v2.0.2) (2022-06-18)
-
 
 ### Bug Fixes
 
@@ -22,19 +21,16 @@
 
 ## [2.0.1](https://github.com/prantlf/build-number-generator/compare/v2.0.0...v2.0.1) (2022-06-18)
 
-
 ### Bug Fixes
 
 * Correct the package version number ([dce3d3e](https://github.com/prantlf/build-number-generator/commit/dce3d3e894f11b72817ecd248afcb162d8d7c2db))
 
 # [2.0.0](https://github.com/prantlf/build-number-generator/compare/v1.0.0...v2.0.0) (2022-06-18)
 
-
 ### Bug Fixes
 
 * Remove commander dependency, modernise project ([d68ba93](https://github.com/prantlf/build-number-generator/commit/d68ba933bad75f135fb8e8f681dfd3d6ed75a99b))
 * Use the same font for inputs and buttons as for the rest of the body ([be77fe0](https://github.com/prantlf/build-number-generator/commit/be77fe00d5639fc972f3dd6dfb1d63a43dbedda0))
-
 
 ### BREAKING CHANGES
 

@@ -40,9 +40,9 @@ for (let i = 2, l = argv.length; i < l; ++i) {
         continue
       case 'V': case 'version':
         {
-          const { readFile } = await import('fs/promises')
-          const { fileURLToPath } = await import('url')
-          const { join, dirname } = await import('path')
+          const { readFile } = await import('node:fs/promises')
+          const { fileURLToPath } = await import('node:url')
+          const { join, dirname } = await import('node:path')
           const pkg = join(dirname(fileURLToPath(import.meta.url)), '../package.json')
           console.log(JSON.parse(await readFile(pkg, 'utf8')).version)
           process.exit(0)

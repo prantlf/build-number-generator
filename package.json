@@ -23,7 +23,7 @@
     }
   ],
   "engines": {
-    "node": ">=14.8"
+    "node": ">=18"
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -45,10 +45,11 @@
   ],
   "scripts": {
     "prepare": "rollup -c",
-    "lint": "denolint && tsc --noEmit tests/types.ts",
+    "lint": "biome lint *.js bin lib tests && tsc --noEmit tests/types.ts",
+    "fix": "biome lint --write *.js bin lib tests",
     "check": "teru-cjs tests/*.cjs && teru-esm tests/*.js",
     "cover": "c8 teru-esm tests/*.js",
-    "test": "denolint && tsc --noEmit tests/types.ts && npx buildnumgen && teru-cjs tests/*.cjs && c8 teru-esm tests/*.js"
+    "test": "biome lint *.js bin lib tests && tsc --noEmit tests/types.ts && npx buildnumgen && teru-cjs tests/*.cjs && c8 teru-esm tests/*.js"
   },
   "c8": {
     "check-coverage": true,
@@ -77,19 +78,20 @@
     ]
   },
   "devDependencies": {
-    "@node-rs/deno-lint": "^1.13.1",
-    "@semantic-release/changelog": "^6.0.1",
+    "@biomejs/biome": "^2.0.5",
+    "@node-rs/deno-lint": "^1.20.4",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "build-number-generator": "link:",
-    "c8": "^7.12.0",
-    "rollup": "^2.77.0",
+    "c8": "^10.1.3",
+    "rollup": "^4.44.1",
     "rollup-plugin-cleanup": "^3.2.1",
-    "rollup-plugin-swc-minify": "^1.0.3",
-    "sprintf-js": "^1.1.2",
+    "rollup-plugin-swc-minify": "^1.3.0",
+    "sprintf-js": "^1.1.3",
     "tehanu": "^1.0.1",
-    "tehanu-repo-coco": "^1.0.0",
-    "tehanu-teru": "^1.0.0",
-    "typescript": "^4.7.4"
+    "tehanu-repo-coco": "^1.0.1",
+    "tehanu-teru": "^1.0.1",
+    "typescript": "^5.8.3"
   },
   "keywords": [
     "buildnumber",

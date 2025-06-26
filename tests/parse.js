@@ -1,6 +1,6 @@
 import { parse as parseBuildTime } from '../dist/index.mjs'
 import { date as expectedDate, build } from './shared/build.js'
-import { ok, strictEqual, throws } from 'assert'
+import { ok, strictEqual, throws } from 'node:assert'
 import tehanu from 'tehanu'
 
 const test = tehanu(import.meta.url)
@@ -23,7 +23,7 @@ test('parses a valid build number', () => {
 })
 
 test('parses a product version with build number', () => {
-  const date = parseBuildTime('1.0.3.' + build)
+  const date = parseBuildTime(`1.0.3.${build}`)
   checkParsedBuild(date)
 })
 

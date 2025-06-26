@@ -1,6 +1,6 @@
 import { generate as generateBuildNumber } from '../dist/index.mjs'
 import { build as expectedBuild } from './shared/build.js'
-import { strictEqual } from 'assert'
+import { strictEqual } from 'node:assert'
 import tehanu from 'tehanu'
 
 const test = tehanu(import.meta.url)
@@ -16,7 +16,7 @@ test('generates a new build number by default', () => {
 
 test('appends the new build number after the product version', () => {
   const build = generateBuildNumber('1.0.3')
-  strictEqual(build, '1.0.3.' + expectedBuild)
+  strictEqual(build, `1.0.3.${expectedBuild}`)
 })
 
 test('appends the new build number with an object parameter', () => {
