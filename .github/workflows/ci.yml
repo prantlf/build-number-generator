@@ -11,29 +11,29 @@ on:
       - LICENSE
   pull_request:
 
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
   test-and-release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: pnpm/action-setup@v4
+    - uses: actions/checkout@v6
+    - uses: pnpm/action-setup@v5
       with:
         version: latest
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v6
       with:
         node-version: 'lts/*'
         registry-url: 'https://registry.npmjs.org'
         cache: 'pnpm'
     - run: pnpm i --frozen-lockfile --no-verify-store-integrity
     - run: npm test
-    - uses: codecov/codecov-action@v4
-      if: ${{ github.ref_name == 'master' }}
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+    - uses: codecov/codecov-action@v6
     - uses: prantlf/publish-release-action@v1
-      if: ${{ github.ref_name == 'master' }}
       with:
+        no-npm-auth: true
         no-archives: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
