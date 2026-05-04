@@ -1,5 +1,11 @@
 # Changes
 
+## [3.1.0](https://github.com/prantlf/build-number-generator/compare/v3.0.0...v3.1.0) (2026-05-04)
+
+### Features
+
+* Upgrade dependencies ([9ebac69](https://github.com/prantlf/build-number-generator/commit/9ebac69a4e07cae765ec060044930b573e66bf05))
+
 ## [3.0.0](https://github.com/prantlf/build-number-generator/compare/v2.0.4...v3.0.0) (2025-06-26)
 
 ### Features
